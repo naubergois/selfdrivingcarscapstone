@@ -16,6 +16,14 @@ For the past couple of decades, we've noticed a steady growth in research from d
 
 However, many Route planning algorithm has contradictory requirements, advantages and disadvantages.  Although offline path planning ensures an optimal path to the destination, it cannot run without previous information regarding the world before the trail search.  Online path planning is acceptable for dynamic environments, but cannot guarantee an optimal outcome.  Therefore, there is a need for the algorithm which allows the autonomous vehicle to reach its destination in a changing traffic environment (Barreto, M. (2017). No 主観的健康感を中心とした在宅高齢者における 健康関連指標に関する共分散構造分析Title. 1–14).
 
+
+
+In this Measure, the Best path from the start point to the temporary goal point is found throughout the above algorithm and put within an array (waypoints), so that the autonomous car can follow the path.  Having received the grid in the current place and the grid in the goal point, confirming the path search is finished, the result is stored in an array.  This result then goes backward from the temporary target to the beginning point.
+
+
+
+
+
 # System Architecture Diagram
 
 For this project, you'll be writing ROS nodes to implement core functionality of the autonomous vehicle system, including traffic light detection, control, and waypoint following! You will test your code using a simulator, and when you are ready, your group can submit the project to be run on Carla.
@@ -60,7 +68,7 @@ This package contains the waypoint updater node: `waypoint_updater.py`. The purp
 
 Carla is equipped with a drive-by-wire (dbw) system, meaning the throttle, brake, and steering have electronic control. This package contains the files that are responsible for control of the vehicle: the node `dbw_node.py` and the file `twist_controller.py`, along with a pid and lowpass filter that you can use in your implementation. The `dbw_node` subscribes to the `/current_velocity` topic along with the `/twist_cmd` topic to receive target linear and angular velocities. Additionally, this node will subscribe to `/vehicle/dbw_enabled`, which indicates if the car is under dbw or driver control. This node will publish throttle, brake, and steering commands to the `/vehicle/throttle_cmd`, `/vehicle/brake_cmd`, and `/vehicle/steering_cmd` topics.
 
-
+![](twist.gif)
 
 ![img](dbw-node-ros-graph.png)
 
