@@ -38,15 +38,13 @@ You will build both a traffic light detection node and a traffic light classific
 
 
 
-![img](tl-detector-ros-graph.png)
-
 
 
 ## (path_to_project_repo)/ros/src/waypoint_updater/
 
 This package contains the waypoint updater node: `waypoint_updater.py`. The purpose of this node is to update the target velocity property of each waypoint based on traffic light and obstacle detection data. This node will subscribe to the `/base_waypoints`, `/current_pose`, `/obstacle_waypoint`, and `/traffic_waypoint` topics, and publish a list of waypoints ahead of the car with target velocities to the `/final_waypoints` topic.
 
-
+![](C:\Users\naube\OneDrive\Documents\git\selfdrivingcarscapstone\waypoint)
 
 ![img](waypoint-updater-ros-graph.png)
 
