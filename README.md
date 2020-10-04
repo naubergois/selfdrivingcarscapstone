@@ -122,7 +122,7 @@ The first approach used in the simulator was to use a pre-trained neural network
 
 ![](screen1)
 
-
+The below image represents the cut off traffic light by the model
 
 ![](screen2)
 
@@ -146,11 +146,21 @@ The second approach was tested with Carla real images (Test of second approach [
 
 
 
-![](\light\left0000.jpg)
+![](.\light\left0000.jpg)
 
 
 
+Test with real images:
 
+
+
+![image-20201004165452518](image-20201004165452518.png)
+
+![image-20201004165554358](image-20201004165554358.png)
+
+
+
+![image-20201004165648493](image-20201004165648493.png)
 
 ***
 
@@ -160,7 +170,7 @@ The second approach was tested with Carla real images (Test of second approach [
 
 
 
-
+Link of simulator https://github.com/udacity/CarND-Capstone/releases
 
 ***
 
