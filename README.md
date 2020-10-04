@@ -142,10 +142,50 @@ The below image represents the cut off traffic light by the model
 
 
 
+The function bellow counts the amount of read, green and yellow color in image.
+
+def detect_red_and_yellow(self,img, Threshold=0.06):
+	    """
+	    detect red and yellow
+	    :param img:
+	    :param Threshold:
+	    :return:
+	    """
+
+	    desired_dim = (30, 90)  # width, height
+	    img = cv2.resize(np.array(img), desired_dim, interpolation=cv2.INTER_LINEAR)
+	    img_hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
+	
+	    # lower mask (0-10)
+	    lower_red = np.array([0, 70, 50])
+	    upper_red = np.array([10, 255, 255])
+	    mask0 = cv2.inRange(img_hsv, lower_red, upper_red)
+	
+	    # upper mask (170-180)
+	    lower_red1 = np.array([170, 70, 50])
+	    upper_red1 = np.array([180, 255, 255])
+	    mask1 = cv2.inRange(img_hsv, lower_red1, upper_red1)
+	
+	    # defining the Range of yellow color
+	    lower_yellow = np.array([21, 39, 64])
+	    upper_yellow = np.array([40, 255, 255])
+	    mask2 = cv2.inRange(img_hsv, lower_yellow, upper_yellow)
+	
+	    print(np.count_nonzero(mask0))
+	    print(np.count_nonzero(mask1))
+	    print(np.count_nonzero(mask2))
+	
+	    # red pixels' mask
+	    mask = mask0 + mask1 + mask2
 
 
 
 
+	    rospy.loginfo(np.count_nonzero(mask))
+	    if np.count_nonzero(mask)> 100:
+		          return True
+	    else:
+		          return False
 However, this approach did not pass the tests with Carla's real images, and a second approach was adopted outside the simulation mode. 
 
 ### Second Approach Traffic Light Classifier
@@ -182,11 +222,23 @@ Test with real images:
 
 
 
-Link of simulator https://github.com/udacity/CarND-Capstone/releases
+Link of simulator  https://github.com/udacity/CarND-Capstone/releases
 
 
 
+![](other.gif)
 
+Other projects :
+
+https://github.com/naubergois/PathPlanning
+
+https://github.com/naubergois/BehavioralClonning
+
+https://github.com/naubergois/PIDcontrol
+
+https://github.com/naubergois/ExtendedKalmanFilter
+
+https://github.com/naubergois/SecondRobot
 
 ![](thanks.gif)
 
