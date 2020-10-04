@@ -10,7 +10,11 @@ Member: Francisco  Nauber Bernardo Gois
 
 Link of video: https://www.youtube.com/watch?v=J63XneztDAA
 
+For the past couple of decades, we've noticed a steady growth in research from driverless technology. Indeed, a fleet of dependable autonomous vehicles can reevaluate freedom and road safety while radically reducing driving costs.  Because of this, it's one of the very talked-about technologies in both the business and academia today.  The recent improvements in sensor technology and increased computing capacities have fueled those improvements, together with all the perceived transport and societal advantages: In 2018, there have been 33,654 deaths, with 1.9 million accidents from the United States NHTSA Vatsa, (S. (2020). Digital Commons @ Michigan Tech VEHICLE DYNAMICS MODELING FOR AUTONOMOUS DRIFTING AND CLOTHOID BASED WAYPOINT INTERPOLATION).
 
+
+
+However, many Route planning algorithm has contradictory requirements, advantages and disadvantages.  Although offline path planning ensures an optimal path to the destination, it cannot run without previous information regarding the world before the trail search.  Online path planning is acceptable for dynamic environments, but cannot guarantee an optimal outcome.  Therefore, there is a need for the algorithm which allows the autonomous vehicle to reach its destination in a changing traffic environment (Barreto, M. (2017). No 主観的健康感を中心とした在宅高齢者における 健康関連指標に関する共分散構造分析Title. 1–14).
 
 # System Architecture Diagram
 
@@ -29,6 +33,8 @@ The following is a system architecture diagram showing the ROS nodes and topics 
 Below is a brief overview of the repo structure, along with descriptions of the ROS nodes. The code that you will need to modify for the project will be contained entirely within the `(path_to_project_repo)/ros/src/` directory. Within this directory, you will find the following ROS packages:
 
 ## (path_to_project_repo)/ros/src/tl_detector/
+
+![](object.gif)
 
 This package contains the traffic light detection node: `tl_detector.py`. This node takes in data from the `/image_color`, `/current_pose`, and `/base_waypoints` topics and publishes the locations to stop for red traffic lights to the `/traffic_waypoint` topic.
 
